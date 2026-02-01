@@ -1,0 +1,7 @@
+# Env files (anywhere)
+.env
+
+# Node dependencies (anywhere)
+node_modules/
+
+..gitattributes

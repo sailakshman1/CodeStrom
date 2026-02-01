@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Team Registrations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-box {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            flex: 1;
+        }
+        
+        .stat-box h3 {
+            margin: 0;
+            font-size: 24px;
+        }
+        
+        .stat-box p {
+            margin: 5px 0 0;
+        }
+        
+        .controls {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 250px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+        
+        .team-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            background-color: white;
+        }
+        
+        .team-header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .team-header h3 {
+            margin: 0;
+        }
+        
+        .team-body {
+            padding: 15px;
+        }
+        
+        .member {
+            border: 1px solid #eee;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        
+        .member h4 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        
+        .member-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        
+        .member-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: #666;
+        }
+        
+        .no-data {
+            text-align: center;
+            padding: 50px;
+            color: #999;
+        }
+        
+        .badge {
+            background-color: #28a745;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+            margin: 0 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Dashboard - Team Registrations</h1>
+        
+        <div class="stats">
+            <div class="stat-box">
+                <h3 id="totalTeams">0</h3>
+                <p>Total Teams</p>
+            </div>
+            <div class="stat-box" style="background-color: #dc3545;">
+                <h3 id="totalMembers">0</h3>
+                <p>Total Members</p>
+            </div>
+            <div class="stat-box" style="background-color: #ffc107; color: black;">
+                <h3 id="avgTeamSize">0</h3>
+                <p>Average Team Size</p>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="Search teams or members...">
+            <button onclick="loadTeams()">Refresh</button>
+        </div>
+        
+        <div id="loading" class="loading" style="display: none;">
+            Loading teams...
+        </div>
+        
+        <div id="noData" class="no-data" style="display: none;">
+            No teams registered yet.
+        </div>
+        
+        <div id="teamsContainer">
+            
+        </div>
+    </div>
+
+    <script>
+        let allTeams = [];
+        
+        async function loadTeams() {
+            const loading = document.getElementById('loading');
+            const teamsContainer = document.getElementById('teamsContainer');
+            const noData = document.getElementById('noData');
+            
+            loading.style.display = 'block';
+            teamsContainer.innerHTML = '';
+            noData.style.display = 'none';
+            
+            try {
+                const response = await fetch('http://localhost:8080/teams');
+                
+                if (response.ok) {
+                    allTeams = await response.json();
+                    displayTeams(allTeams);
+                    updateStats();
+                } else {
+                    showSampleData();
+                }
+            } catch (error) {
+                console.log('API not available, showing sample data');
+                showSampleData();
+            }
+            
+            loading.style.display = 'none';
+        }
+        
+        async function showSampleData() {
+             const data=await fetch('http://localhost:8080/userdata')
+            const res=await data.json()
+            allTeams =res
+            displayTeams(allTeams);
+            updateStats();
+        }
+        
+        function displayTeams(teams) {
+            const container = document.getElementById('teamsContainer');
+            const noData = document.getElementById('noData');
+            
+            if (teams.length === 0) {
+                container.innerHTML = '';
+                noData.style.display = 'block';
+                return;
+            }
+            
+            noData.style.display = 'none';
+            
+            let html = '';
+            teams.forEach((team, index) => {
+                html += `
+                    <div class="team-card">
+                        <div class="team-header">
+                            <h3>${team.teamName} (${team.teamCount} members)</h3>
+                        </div>
+                        <div class="team-body">
+                `;
+                
+                team.members.forEach((member, memberIndex) => {
+                    html += `
+                        <div class="member">
+                            <h4>${member.username}</h4>
+                            <div class="member-info">
+                                <div>
+                                    <p><strong>Email:</strong> ${member.email}</p>
+                                    <p><strong>Mobile:</strong> ${member.mobile}</p>
+                                    <p><strong>College:</strong> ${member.college}</p>
+                                </div>
+                                <div>
+                                    <p><strong>Year:</strong> ${member.year}</p>
+                                    <p><strong>Branch:</strong> <span class="badge">${member.Branch}</span></p>
+                                    <p><strong>City:</strong> ${member.city}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                html += `
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+        
+        function updateStats() {
+            const totalTeams = allTeams.length;
+            const totalMembers = allTeams.reduce((sum, team) => sum + team.teamCount, 0);
+            const avgTeamSize = totalTeams > 0 ? (totalMembers / totalTeams).toFixed(1) : 0;
+            
+            document.getElementById('totalTeams').textContent = totalTeams;
+            document.getElementById('totalMembers').textContent = totalMembers;
+            document.getElementById('avgTeamSize').textContent = avgTeamSize;
+        }
+        
+        function searchTeams() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            
+            if (searchTerm === '') {
+                displayTeams(allTeams);
+                return;
+            }
+            
+            const filteredTeams = allTeams.filter(team => 
+                team.teamName.toLowerCase().includes(searchTerm) ||
+                team.members.some(member => 
+                    member.username.toLowerCase().includes(searchTerm) ||
+                    member.email.toLowerCase().includes(searchTerm) ||
+                    member.college.toLowerCase().includes(searchTerm) ||
+                    member.Branch.toLowerCase().includes(searchTerm) ||
+                    member.city.toLowerCase().includes(searchTerm)
+                )
+            );
+            
+            displayTeams(filteredTeams);
+        }
+        
+      
+        document.getElementById('searchInput').addEventListener('input', searchTeams);
+        
+       
+        loadTeams();
+    </script>
+</body>
+</html>

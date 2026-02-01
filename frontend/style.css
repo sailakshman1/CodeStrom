@@ -1,0 +1,421 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#about,
+#challenges,
+#jury,
+#schedule,
+#prize,
+#footer {
+    scroll-margin-top: 100px;
+}
+
+a {
+    text-decoration: none;
+}
+
+header #head {
+    background-color: black;
+    height: 60px;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1000;
+}
+
+header #head h1 {
+    margin-left: 20px;
+}
+
+header #head #get-in-touch {
+    margin-right: 20px;
+}
+
+header #head #get-in-touch a {
+    color: #fff;
+    margin-left: 15px;
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+header #head #get-in-touch a:hover {
+    opacity: 1;
+    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
+}
+
+
+nav {
+    height: 45px;
+    background-color: #1b5a57;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 60px;
+    z-index: 999;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    padding: 0 20px;
+    border-right: 2px solid white;
+}
+
+nav ul li:last-child {
+    border-right: none;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+nav ul li a:visited {
+    color: white;
+}
+
+nav ul li:hover a {
+    color: white;
+}
+
+#info {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+#info-icons {
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+}
+
+#info-icons span {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+#info-icons i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+#info-icons p {
+    margin: 0;
+}
+
+#register {
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+#register p {
+    margin: 0;
+}
+
+#register p strong {
+    font-size: 1.25rem;
+}
+
+#register button {
+    margin-top: 10px;
+}
+
+.column_left {
+    height: 250px;
+    width: 250px;
+}
+
+.column {
+    margin-top: 25px;
+}
+
+.left-block {
+    border-right: 1px solid #ddd;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+#challenges-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 10px;
+    width: 100%;
+}
+
+.challenge-card {
+    width: 48.5%;
+    margin-bottom: 25px;
+    border: none;
+    box-shadow: 2px 2px 5px rgb(168, 166, 166);
+    height: 125px;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.challenge-card:hover {
+    transform: translateY(-3px);
+    /* Subtle lift */
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.15);
+    /* Softer shadow */
+}
+
+.inner-card {
+    display: flex;
+    margin: 10px;
+}
+
+.card-image img {
+    height: 100px;
+    width: 100px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.card-heading h2 {
+    color: black;
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.carousel-inner {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.social-icons .fa-facebook {
+    color: #1877f2;
+}
+
+.social-icons .fa-twitter {
+    color: #1da1f2;
+}
+
+.social-icons .fa-youtube {
+    color: #ff0000;
+}
+
+#facebook i {
+    color: #1877f2;
+}
+
+#youtube i {
+    color: #ff0000;
+}
+
+#linkedin i {
+    color: #0077b5;
+}
+
+#instagram i {
+    color: #e4405f;
+}
+
+.jury-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    height: 100%;
+}
+
+.jury-card:hover {
+    transform: translateY(-5px);
+}
+
+.jury-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+}
+
+.jury-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-weight: 500;
+    color: #5a48f5;
+    text-decoration: none;
+}
+
+.jury-link i {
+    transition: transform 0.2s ease;
+}
+
+.jury-link:hover i {
+    transform: translateX(3px);
+}
+
+.schedule-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.schedule-date {
+    background-color: #2d6a63;
+    color: white;
+    font-weight: 600;
+    padding: 15px 20px;
+    position: relative;
+    min-width: 160px;
+    text-align: center;
+    border-radius: 8px 0 0 8px;
+}
+
+.schedule-date::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #2d6a63;
+}
+
+.schedule-card {
+    background: white;
+    padding: 20px 25px;
+    border-radius: 10px;
+    margin-left: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    flex: 1;
+    min-width: 250px;
+    transition: transform 0.2s ease;
+}
+
+.schedule-card:hover {
+    transform: translateY(-2px);
+}
+
+.schedule-card p {
+    margin: 0;
+    color: #5f5f5f;
+    font-size: 14px;
+}
+
+.schedule-card i {
+    color: #6a5af9;
+    margin-right: 8px;
+}
+
+.schedule-card h5 {
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .schedule-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .schedule-date {
+        border-radius: 8px 8px 0 0;
+        width: 100%;
+    }
+
+    .schedule-date::after {
+        display: none;
+    }
+
+    .schedule-card {
+        border-radius: 0 0 8px 8px;
+        margin-left: 0;
+    }
+}
+
+.reward-card {
+    background-color: #f9f9f9;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.reward-card:hover {
+    transform: translateY(-5px);
+}
+
+.reward-card img {
+    width: 80px;
+    margin-bottom: 15px;
+}
+
+.reward-card h5 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.footer-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 5px;
+    background-color: white;
+    padding: 4px;
+}
+
+.social-icon {
+    font-size: 1.4rem;
+    color: white;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.social-icon.fb:hover {
+    color: #1877f2;
+}
+
+.social-icon.insta:hover {
+    color: #e1306c;
+}
+
+.social-icon.twitter:hover {
+    color: #1da1f2;
+}
+
+.social-icon.linkedin:hover {
+    color: #0a66c2;
+}
+
+.social-icon.youtube:hover {
+    color: #FF0000;
+}
+
+.logo-spacing {
+    margin-right: 1rem;
+}

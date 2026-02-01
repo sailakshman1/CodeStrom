@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div id="head">
+            <div id="logo">
+                <h1>SRKR Coding Club<h1>
+            </div>
+            <div id="get-in-touch">
+                <a href="https://www.facebook.com/people/SRKR-Coding-Club/61565827274771/" target="_blank"
+                    id="facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/srkr_coding_club/?igshid=MzRlODBiNWFlZA%3D%3D" target="_blank"
+                    id="instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/srkr-coding-club-549799293/" target="_blank" id="linkedin"><i
+                        class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/@SRKRCODINGCLUB" target="_blank" id="youtube"><i
+                        class="fa-brands fa-youtube"></i></a>
+                <a href="https://x.com/srkrcodingclub" target="_blank" id="twitter"><i
+                        class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </header>
+    <br><br><br>
+    <div class="container-lg">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="assets/banner1.png" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="assets/banner2.jpeg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="assets/banner3.jpg" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <section id="info">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-sm-2"><img src="assets/logo.jpg" alt="logo"
+                        class="mx-auto img-fluid rounded-circle border-0">
+                </div>
+                <div class="col-sm-6 col-md-7">
+                    <h1>CodeStrom</h1>
+                    <p>Join us for an exciting 24-hour Full Stack Development Hackathon where innovation meets
+                        creativity.
+                        Dive
+                        into intensive workshops, coding challenges, and hands-on sessions to sharpen your skills in
+                        modern
+                        web
+                        development. Collaborate with peers, build dynamic projects, and tackle real-world problems
+                        while
+                        learning best practices in cybersecurity. Take a break with an evening cultural show and
+                        networking
+                        opportunities. A perfect blend of learning, building, and showcasing your talent all in one
+                        action-packed event!</p>
+                    <div id="info-icons">
+                        <span><i class="fa-solid fa-people-line"></i>
+                            <p>1-4 Team Members</p>
+                        </span>
+                        <span><i class="fa-solid fa-clock"></i>
+                            <a href="#schedule" style="text-decoration: none;">View Full Schedule</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-3" id="register">
+                    <p>LAST DATE TO REGISTER</p>
+                    <p><strong>FRI AUG 15, 2025</strong></p>
+                    <a href="http://localhost:8080/register"><button type="button" class="btn btn-danger">REGISTER
+                            NOW</button></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <nav>
+        <ul>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#challenges">CHALLENGES</a></li>
+            <li><a href="#jury">JUDGES</a></li>
+            <li><a href="#schedule">SCHEDULE</a></li>
+            <li><a href="#prize">PRIZES</a></li>
+            <li><a href="#footer">CONTACT US</a></li>
+        </ul>
+    </nav>
+    <section class="column">
+        <div class="container-lg">
+            <div class="row">
+                <div class="col-sm-3 d-none d-sm-none d-md-block left-block">
+                    <div class="column_left">
+                        <img src="assets/logo.jpg" alt="logo" class="mx-auto img-fluid rounded-circle border-0">
+                    </div>
+                    <h1 class="mt-2">CodeStrom</h1>
+                    <p class="text-sub">Join us for an exciting 24-hour Full Stack Development Hackathon where
+                        innovation meets
+                        creativity.
+                        Dive
+                        into intensive workshops, coding challenges, and hands-on sessions to sharpen your skills in
+                        modern
+                        web
+                        development. Collaborate with peers, build dynamic projects, and tackle real-world problems
+                        while
+                        learning best practices in cybersecurity. Take a break with an evening cultural show and
+                        networking
+                        opportunities. A perfect blend of learning, building, and showcasing your talent all in one
+                        action-packed event!
+                    </p>
+                    <hr>
+                    <div class="text-left">
+                        <small>LAST DATE TO REGISTER</small>
+                        <p class="endDate"><strong>FRI AUG 15, 2025</strong></p>
+                        <a href="http://localhost:8080/register"><button type="button" class="btn btn-danger">REGISTER
+                                NOW</button></a>
+                    </div>
+                    <hr>
+                    <p class="info_1_tabs m-0 p-0">
+                        <span><i class="fas fa-globe-asia" aria-hidden="true"></i>
+                            <span>SRKR COLLEGE | BHIMAVARAM</span>
+                        </span>
+                        <span><i class="fa-solid fa-people-line"></i>
+                            <p>1-4 Team Members</p>
+                        </span>
+                        <span><i class="fa-solid fa-clock"></i>
+                            <a href="#schedule" style="text-decoration: none;">View Full Schedule</a>
+                        </span>
+                    </p>
+                </div>
+                <div class="col-12 col-sm-12 col-md-9 snippet-1">
+                    <div class="column_right pl-sm-1 pl-md-3 mb-0">
+                        <div class="row my-3" style="overflow-x: hidden;">
+                            <div class="col-sm-12" id="about">
+                                <h1>About</h1>
+                                <p>CodeStrom is a 24-hour Full Stack Development Hackathon that brings together
+                                    innovative minds to create impactful solutions. Participants will engage in
+                                    hands-on workshops, coding challenges, and collaborative projects, all while
+                                    learning from industry experts and mentors. Join us for an unforgettable
+                                    experience of learning, building, and showcasing your skills!</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row my-3 challenges">
+                            <div class="col-sm-12" id="challenges">
+                                <h1>Challenges</h1>
+                            </div>
+                            <div id="challenges-container">
+                                <div class="challenge-card">
+                                    <div class="inner-card">
+                                        <div class="card-image"><img src="assets/agriculture.png" alt="agriculture">
+                                        </div>
+                                        <div class="card-heading">
+                                            <h2>Agriculture</h2>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="challenge-card">
+                                    <div class="inner-card">
+                                        <div class="card-image"><img src="assets/healthcare.png" alt="healthcare">
+                                        </div>
+                                        <div class="card-heading">
+                                            <h2>
+                                                Healthcare</h2>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="challenge-card">
+                                    <div class="inner-card">
+                                        <div class="card-image"><img src="assets/sustainability.png"
+                                                alt="sustainability">
+                                        </div>
+                                        <div class="card-heading">
+                                            <h2>
+                                                Sustainability</h2>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="challenge-card">
+                                    <div class="inner-card">
+                                        <div class="card-image"><img src="assets/cybersecurity.png" alt="cybersecurity">
+                                        </div>
+                                        <div class="card-heading">
+                                            <h2>Cybersecurity</h2>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="challenge-card">
+                                    <div class="inner-card">
+                                        <div class="card-image"><img src="assets/edutech.png" alt="edutech">
+                                        </div>
+                                        <div class="card-heading">
+                                            <h2>
+                                                EdTech</h2>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="challenge-card">
+                                    <div class="inner-card">
+                                        <div class="card-image"><img src="assets/fintech.png" alt="fintech">
+                                        </div>
+                                        <div class="card-heading">
+                                            <h2>
+                                                FinTech</h2>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="challenge-card">
+                                    <div class="inner-card">
+                                        <div class="card-image"><img src="assets/internet of things.png"
+                                                alt="internet of things">
+                                        </div>
+                                        <div class="card-heading">
+                                            <h2>Internet of Things</h2>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="challenge-card">
+                                    <div class="inner-card">
+                                        <div class="card-image"><img src="assets/robotics.png" alt="robotics">
+                                        </div>
+                                        <div class="card-heading">
+                                            <h2>
+                                                Robotics Technology
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="container py-4" id="jury">
+                            <h2 class="mb-4">Jury Panel</h2>
+                            <div class="row justify-content-flex-start">
+
+                                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                                    <div class="jury-card text-center">
+                                        <img src="https://img.icons8.com/fluency/160/administrator-male.png"
+                                            alt="Sai Lakshman" class="jury-img mb-3">
+                                        <h5 class="mb-1">Sai Lakshman</h5>
+                                        <p class="mb-1">Senior Developer</p>
+                                        <p><strong>XYZ</strong></p>
+                                        <a href="https://www.linkedin.com/in/sailakshman-" target="_blank"
+                                            class="jury-link">
+                                            View More <i class="fas fa-chevron-right ms-1"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                                    <div class="jury-card text-center">
+                                        <img src="https://img.icons8.com/fluency/160/administrator-male.png"
+                                            alt="Sai Lakshman" class="jury-img mb-3">
+                                        <h5 class="mb-1">Kalyan</h5>
+                                        <p class="mb-1">Team lead</p>
+                                        <p><strong>XYZ</strong></p>
+                                        <a href="https://www.linkedin.com/in/sailakshman-" target="_blank"
+                                            class="jury-link">
+                                            View More <i class="fas fa-chevron-right ms-1"></i>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="container my-5" id="schedule">
+                            <h2 class="mb-5">Schedule</h2>
+
+                            <div class="schedule-item">
+                                <div class="schedule-date">15 Jul 2025</div>
+                                <div class="schedule-card">
+                                    <p><i class="fas fa-clock"></i> 00:00</p>
+                                    <h5>Registrations Open</h5>
+                                </div>
+                            </div>
+
+                            <div class="schedule-item">
+                                <div class="schedule-date">Tue Aug 10 2025</div>
+                                <div class="schedule-card">
+                                    <p><i class="fas fa-clock"></i> 23:59</p>
+                                    <h5>Registrations Closes</h5>
+                                </div>
+                            </div>
+
+                            <div class="schedule-item">
+                                <div class="schedule-date">Sun Aug 15 2025</div>
+                                <div class="schedule-card">
+                                    <p><i class="fas fa-clock"></i> 10:00</p>
+                                    <h5>Hackathon Begin</h5>
+                                </div>
+                            </div>
+
+                            <div class="schedule-item">
+                                <div class="schedule-date">Mon Aug 16 2025</div>
+                                <div class="schedule-card">
+                                    <p><i class="fas fa-clock"></i> 10:00</p>
+                                    <h5>Hackathon Close</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="container py-5" id="prize">
+                            <h2 class="mb-5">Prizes & Rewards</h2>
+
+                            <div class="row justify-content-center g-4">
+
+                                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                                    <div class="reward-card">
+                                        <img src="https://img.icons8.com/emoji/96/trophy-emoji.png" alt="Trophy">
+                                        <h5>INR 30,000</h5>
+                                        <p>Winner</p>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                                    <div class="reward-card">
+                                        <img src="https://img.icons8.com/emoji/96/sports-medal-emoji.png"
+                                            alt="1st Runner-Up">
+                                        <h5>INR 25,000</h5>
+                                        <p>1st Runner-Up</p>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                                    <div class="reward-card">
+                                        <img src="https://img.icons8.com/color/96/medal-second-place.png"
+                                            alt="2nd Runner-Up">
+                                        <h5>INR 15,000</h5>
+                                        <p>2nd Runner-Up</p>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                                    <div class="reward-card">
+                                        <img src="https://img.icons8.com/color/96/medal-second-place.png"
+                                            alt="Third Winner">
+                                        <h5>INR 10,000</h5>
+                                        <p>3rd Winner</p>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                                    <div class="reward-card">
+                                        <img src="https://img.icons8.com/color/96/school-backpack.png" alt="Backpack">
+                                        <h5>Branded Backpacks</h5>
+                                        <p>Winners & Runners</p>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                                    <div class="reward-card">
+                                        <img src="https://img.icons8.com/color/96/t-shirt.png" alt="T-Shirts">
+                                        <h5>T-Shirts</h5>
+                                        <p>Winners & Runners</p>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                                    <div class="reward-card">
+                                        <img src="https://img.icons8.com/color/96/prize.png" alt="Gold Certificate">
+                                        <h5>Certificate of Excellence</h5>
+                                        <p>Winners & Runners</p>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                                    <div class="reward-card">
+                                        <img src="https://img.icons8.com/color/96/certificate.png"
+                                            alt="Certificate of Participation">
+                                        <h5>Certificate of Participation</h5>
+                                        <p>All Participants</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer bg-dark text-light py-4" id="footer">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+
+
+            <div class="d-flex align-items-center mb-3 mb-md-0">
+                <img src="assets/srkrcc-logo.png" alt="SRKR Coding Club Logo" class="footer-logo logo-spacing">
+
+
+                <div>
+                    <h5 class="mb-1">SRKR Coding Club</h5>
+                    <p class="mb-1">Empowering students through code.</p>
+                    <p class="mb-0">Email: <a href="mailto:srkrcodingclub@gmail.com"
+                            class="text-warning">srkrcodingclub@gmail.com</a></p>
+                </div>
+            </div>
+
+
+            <div class="text-center text-md-end">
+                <h6 class="mb-2">Follow us on</h6>
+                <a href="https://www.facebook.com/people/SRKR-Coding-Club/61565827274771/" class="social-icon me-2 fb"
+                    target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/srkr_coding_club/?igshid=MzRlODBiNWFlZA%3D%3D"
+                    class="social-icon me-2 insta" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/srkrcodingclub" class="social-icon me-2 twitter" target="_blank"><i
+                        class="fab fa-x-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/srkr-coding-club-549799293/" class="social-icon me-2 linkedin"
+                    target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.youtube.com/@SRKRCODINGCLUB" class="social-icon me-2 youtube" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.location.hash === '#jury') {
+                history.replaceState(null, '', window.location.pathname + window.location.search);
+            }
+        });
+    </script>
+</body>
+
+</html>
